@@ -8,7 +8,7 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: ["js/recommended", 'prettier'],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
       parser: tseslint.parser,
