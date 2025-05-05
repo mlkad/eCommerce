@@ -101,55 +101,53 @@ src/
 
 ```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Available npm Scripts
 
-Currently, two official plugins are available:
+- `npm run dev` – starts the Vite development server with hot-module reloading at **http://localhost:5173**
+- `npm run build` – runs `tsc -b` for type-checking and builds an optimized production bundle in **dist/**
+- `npm run lint` – executes ESLint on the whole code-base; fails on _any_ warning (`--max-warnings 0`)
+- `npm run lint:fix` – runs ESLint with `--fix`, automatically correcting fixable issues
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `npm run format` – formats all supported files with Prettier (`.ts, .tsx, .js, .jsx, .json, .css, .scss, .md`)
+- `npm test` – one-shot Vitest run (`vitest run`); used in the **pre-push** hook
+- `npm run test:coverage` – runs tests and creates an HTML/LCOV coverage report in **coverage/**
 
-## Expanding the ESLint configuration
+## Quick Local Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Install prerequisites**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+   - Node 22 + and npm 10 + (`node -v`, `npm -v`)
+   - Git 2.40 +
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Clone the repository**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+   ```bash
+   git clone https://github.com/mlkad/eCommerce.git
+   cd eCommerce
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Run quality checks**
+
+   ```bash
+   npm run lint
+   npm run format
+   npm test
+   ```
+
+6. **Create a production build**
+
+   ```bash
+   npm run build
+   ```
