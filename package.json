@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint ./e-commerce",
+    "format": "prettier ./e-commerce"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
+}
