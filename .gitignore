@@ -7,9 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build / output artefacts
 dist
 dist-ssr
+coverage           
+
+# Local environment overrides
 *.local
 
 # Editor directories and files
