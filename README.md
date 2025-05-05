@@ -1,4 +1,13 @@
-# React + TypeScript + Vite
+<h1 align="center">eCommerce by "StackUp" team</h1>
+
+## About Project
+
+<p align="center">
+  <em>The project is dedicated to the writing of full-fledged SPA as a part of educational process in the Rolling Scopes School.
+  <strong>The choosen Technological Stack</strong>:
+   A React + TypeScript powered by <a href="https://commercetools.com">CommerceTools</a> and built with Vite.</em><br/>
+  <sub>Part of the RollingScopes School “eCommerce” course • Sprint 1 (150 pts)</sub>
+</p>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
